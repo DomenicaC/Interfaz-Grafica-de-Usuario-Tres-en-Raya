@@ -5,6 +5,8 @@
  */
 package ec.edu.ups.interfaz;
 
+import java.awt.Color;
+
 /**
  *
  * @author Domenica Cañizares
@@ -16,6 +18,27 @@ public class TresEnRaya extends javax.swing.JFrame {
      */
     public TresEnRaya() {
         initComponents();
+        
+        ingresar();
+        
+        pnlO.setBackground(Color.green);
+        pnlX.setBackground(Color.yellow);
+
+        //lineas horizontales
+        jlbhor1.setVisible(false);
+        jlbhor2.setVisible(false);
+        jlbhor3.setVisible(false);
+
+        //lineas verticales
+        jlbver1.setVisible(false);
+        jlbver2.setVisible(false);
+        jlbver3.setVisible(false);
+
+        //lineas horizontales
+        jlbdia1.setVisible(false);
+        jlbdia2.setVisible(false);
+        
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,10 +53,10 @@ public class TresEnRaya extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        pnlX = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jlbX1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        pnlO = new javax.swing.JPanel();
         jlbO1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -43,6 +66,8 @@ public class TresEnRaya extends javax.swing.JFrame {
         jlbver1 = new javax.swing.JLabel();
         jlbver2 = new javax.swing.JLabel();
         jlbver3 = new javax.swing.JLabel();
+        jlbdia1 = new javax.swing.JLabel();
+        jlbdia2 = new javax.swing.JLabel();
         btn00 = new javax.swing.JButton();
         btn01 = new javax.swing.JButton();
         btn02 = new javax.swing.JButton();
@@ -61,10 +86,15 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jButton1.setText("Juegar de Nuevo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        pnlX.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setText("X");
@@ -72,28 +102,28 @@ public class TresEnRaya extends javax.swing.JFrame {
         jlbX1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jlbX1.setText("0");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlXLayout = new javax.swing.GroupLayout(pnlX);
+        pnlX.setLayout(pnlXLayout);
+        pnlXLayout.setHorizontalGroup(
+            pnlXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlXLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(32, 32, 32)
                 .addComponent(jlbX1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        pnlXLayout.setVerticalGroup(
+            pnlXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlXLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlXLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jlbX1))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        pnlO.setBackground(new java.awt.Color(204, 204, 204));
 
         jlbO1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jlbO1.setText("0");
@@ -101,22 +131,22 @@ public class TresEnRaya extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel5.setText("O");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlOLayout = new javax.swing.GroupLayout(pnlO);
+        pnlO.setLayout(pnlOLayout);
+        pnlOLayout.setHorizontalGroup(
+            pnlOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
                 .addGap(32, 32, 32)
                 .addComponent(jlbO1)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        pnlOLayout.setVerticalGroup(
+            pnlOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnlOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jlbO1))
                 .addGap(20, 20, 20))
@@ -127,19 +157,19 @@ public class TresEnRaya extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addComponent(pnlO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlO, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -164,31 +194,82 @@ public class TresEnRaya extends javax.swing.JFrame {
         jlbver3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/ver.png"))); // NOI18N
         jPanel5.add(jlbver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
+        jlbdia1.setText("jLabel4");
+        jPanel5.add(jlbdia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jlbdia2.setText("jLabel6");
+        jPanel5.add(jlbdia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+
         btn00.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn00.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn00ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn00, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 70, 66));
 
         btn01.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn01ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn01, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 11, 70, 66));
 
         btn02.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn02ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn02, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 11, 70, 66));
 
         btn12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn12ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn12, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 95, 70, 66));
 
         btn11.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn11ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn11, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 95, 70, 66));
 
         btn10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn10ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 95, 70, 66));
 
         btn22.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn22ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn22, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 179, 70, 66));
 
         btn21.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn21ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn21, new org.netbeans.lib.awtextra.AbsoluteConstraints(101, 179, 70, 66));
 
         btn20.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btn20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn20ActionPerformed(evt);
+            }
+        });
         jPanel5.add(btn20, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 179, 70, 66));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,20 +277,20 @@ public class TresEnRaya extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel1)))
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(23, 23, 23))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(63, 63, 63))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,6 +310,200 @@ public class TresEnRaya extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn00ActionPerformed
+        opcion();
+        //diagonal
+        cont.rayar(matriz, jlbdia1, 7, 0, 0);
+        //horizontal
+        cont.rayar(matriz, jlbhor1, 1, 0, 0);
+        //vertical
+        cont.rayar(matriz, jlbver1, 4, 0, 0);
+        
+        if(cont.jugar(btn00, 0, 0, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn00ActionPerformed
+
+    private void btn01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor1, 1, 0, 1);
+        //vertical
+        cont.rayar(matriz, jlbver2, 5, 0, 1);
+        
+        if(cont.jugar(btn01, 0, 1, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn01ActionPerformed
+
+    private void btn02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor1, 1, 0, 2);
+        //vertical
+        cont.rayar(matriz, jlbver3, 6, 0, 2);
+        //diagonal
+        cont.rayar(matriz, jlbdia2, 8, 0, 2);
+        
+        if(cont.jugar(btn02, 0, 2, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn02ActionPerformed
+
+    private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor2, 2, 1, 0);
+        //vertical
+        cont.rayar(matriz, jlbver1, 4, 1, 0);
+        
+        if(cont.jugar(btn10, 1, 0, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn10ActionPerformed
+
+    private void btn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11ActionPerformed
+        opcion();
+        //diagonal
+        cont.rayar(matriz, jlbdia1, 7, 1, 1);
+        cont.rayar(matriz, jlbdia2, 8, 1, 1);
+        //horizontal
+        cont.rayar(matriz, jlbhor2, 2, 1, 1);
+        //vertical
+        cont.rayar(matriz, jlbver2, 5, 1, 1);
+        
+        if(cont.jugar(btn11, 1, 1, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn11ActionPerformed
+
+    private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor2, 2, 1, 2);
+        //vertical
+        cont.rayar(matriz, jlbver3, 6, 1, 2);
+        
+        if(cont.jugar(btn12, 1, 02, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn12ActionPerformed
+
+    private void btn20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn20ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor3, 3, 2, 0);
+        //vertical
+        cont.rayar(matriz, jlbver1, 4, 2, 0);
+        //diagonal
+        cont.rayar(matriz, jlbdia2, 8, 2, 0);
+        
+        if(cont.jugar(btn20, 2, 0, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn20ActionPerformed
+
+    private void btn21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn21ActionPerformed
+        opcion();
+        //horizontal
+        cont.rayar(matriz, jlbhor3, 3, 2, 1);
+        //vertical
+        cont.rayar(matriz, jlbver2, 5, 2, 1);
+        
+        if(cont.jugar(btn21, 2, 1, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn21ActionPerformed
+
+    private void btn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn22ActionPerformed
+        opcion();
+        //diagonal
+        cont.rayar(matriz, jlbdia1, 7, 2, 2);
+        //horizontal
+        cont.rayar(matriz, jlbhor3, 3, 2, 2);
+        //vertical
+        cont.rayar(matriz, jlbver3, 6, 2, 2);
+        
+        if(cont.jugar(btn22, 2, 2, matriz, jlbX1, jlbO1)==1){
+             
+        }
+    }//GEN-LAST:event_btn22ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        nuevo();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    
+    //iniciar palabras
+    private int matriz[][] = new int[3][3];
+    
+    public void ingresar(){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j]=(j+10)*(i+10);
+            }
+        }
+    }
+    
+    Contenido cont = new Contenido(0, 0, 0);
+    
+    public void opcion(){
+        if(cont.getTurno()==1){
+            pnlX.setBackground(Color.yellow);
+            pnlO.setBackground(Color.green);
+        }
+        if(cont.getTurno()==0){
+            pnlX.setBackground(Color.green);
+            pnlO.setBackground(Color.yellow);
+        }
+    }
+    
+    public void nuevo(){
+        ingresar();
+        btn00.setText("");
+        btn00.setEnabled(true);
+        
+        btn01.setText("");
+        btn01.setEnabled(true);
+        
+        btn02.setText("");
+        btn02.setEnabled(true);
+        
+        btn10.setText("");
+        btn10.setEnabled(true);
+        
+        btn11.setText("");
+        btn11.setEnabled(true);
+        
+        btn12.setText("");
+        btn12.setEnabled(true);
+        
+        btn20.setText("");
+        btn20.setEnabled(true);
+        
+        btn21.setText("");
+        btn21.setEnabled(true);
+        
+        btn22.setText("");
+        btn22.setEnabled(true);
+        
+        //lineas horizontales
+        jlbhor1.setVisible(false);
+        jlbhor2.setVisible(false);
+        jlbhor3.setVisible(false);
+
+        //lineas verticales
+        jlbver1.setVisible(false);
+        jlbver2.setVisible(false);
+        jlbver3.setVisible(false);
+
+        //lineas horizontales
+        jlbdia1.setVisible(false);
+        jlbdia2.setVisible(false);
+    }
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -279,16 +554,18 @@ public class TresEnRaya extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel jlbO1;
     private javax.swing.JLabel jlbX1;
+    private javax.swing.JLabel jlbdia1;
+    private javax.swing.JLabel jlbdia2;
     private javax.swing.JLabel jlbhor1;
     private javax.swing.JLabel jlbhor2;
     private javax.swing.JLabel jlbhor3;
     private javax.swing.JLabel jlbver1;
     private javax.swing.JLabel jlbver2;
     private javax.swing.JLabel jlbver3;
+    private javax.swing.JPanel pnlO;
+    private javax.swing.JPanel pnlX;
     // End of variables declaration//GEN-END:variables
 }
