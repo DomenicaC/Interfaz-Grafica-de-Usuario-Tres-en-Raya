@@ -133,18 +133,11 @@ public class Contenido {
         }
         return 0;
     }
-/*
-    public void rayar(int matriz[][], javax.swing.JPanel p, int n, int i, int j) {
-        matriz[i][j] = getTurno();
-        if (posibilidad(matriz) == n) {
-            p.setVisible(true);
-        }
-    }
-*/
+
     public void rayar(int matriz[][], javax.swing.JLabel p, int n, int i, int j) {
         matriz[i][j] = getTurno();
         if (posibilidad(matriz) == n) {
             p.setVisible(true);
         }
-    }
+    }        
 }
