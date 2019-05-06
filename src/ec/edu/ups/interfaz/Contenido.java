@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author Domenica Cañizares
+ * @since 03-Mayo-2019
+ * @version IDE 8.0.2 
  */
 public class Contenido {
     private int turno;
@@ -119,7 +121,7 @@ public class Contenido {
         btt.setEnabled(false);
 
         if (posibilidad(matriz) != 0) {
-            JOptionPane.showMessageDialog(null, "Ganaste: " + n);
+            JOptionPane.showMessageDialog(null, "Gano: " + n);
             if (getTurno() == 1) {
                 setpX(getpX() + 1);
                 jX.setText(String.valueOf(getpX()));
@@ -131,6 +133,10 @@ public class Contenido {
             }
             return 1; 
         }
+        
+           // JOptionPane.showMessageDialog(null, "Empate: " + n);
+          
+        
         return 0;
     }
 
@@ -139,5 +145,6 @@ public class Contenido {
         if (posibilidad(matriz) == n) {
             p.setVisible(true);
         }
+        
     }        
 }
