@@ -19,17 +19,17 @@ public class Contenido {
     private int turno;
     private int pX;
     private int pO;
-    private int numRam;
+
+    boolean resp = false;
 
     public Contenido() {
     }
 
     //contructor
-    public Contenido(int turno, int pX, int pO, int numRam) {
+    public Contenido(int turno, int pX, int pO) {
         this.turno = turno;
         this.pX = pX;
         this.pO = pO;
-        this.numRam = numRam;
     }
 
     //set
@@ -45,10 +45,6 @@ public class Contenido {
         this.pO = pO;
     }
 
-    public void setNumRam(int numRam) {
-        this.numRam = numRam;
-    }
-
     //get
     public int getTurno() {
         return turno;
@@ -62,19 +58,12 @@ public class Contenido {
         return pO;
     }
 
-    public int getNumRam() {
-        return numRam;
-    }
-
     public void intercambiar() {
-        //numRam = (int) Math.floor(Math.random() * (9 - 1 + 1) + 1);
 
         if (getTurno() == 0) {
             setTurno(1);
-        } else {
-            setTurno(0);
         }
-        
+
     }
 
     public int posibilidad(int matriz[][]) {
@@ -122,34 +111,33 @@ public class Contenido {
     public int jugar(javax.swing.JButton btt, int i, int j, int matriz[][], javax.swing.JLabel jX, javax.swing.JLabel jO) {
         matriz[i][j] = getTurno();
         String n = new String();
-        if (getTurno() == 0) {
-            n = "X";
-            btt.setForeground(Color.red);
-            
-        } else {
-            n = "O";
+        
+
+        if (getTurno() ==0) {
+            n = "x";
             btt.setForeground(Color.blue);
         }
-
-        intercambiar();
+        //intercambiar();
         btt.setText(n);
         btt.setEnabled(false);
 
         if (posibilidad(matriz) != 0) {
+            
             JOptionPane.showMessageDialog(null, "Gano: " + n);
-            if (getTurno() == 1) {
+            
+            if (getTurno() == 0) {
                 setpX(getpX() + 1);
                 jX.setText(String.valueOf(getpX()));
             }
 
-            if (getTurno() == 0) {
+            if (getTurno() ==1) {
                 setpO(getpO() + 1);
                 jO.setText(String.valueOf(getpO()));
             }
             return 1;
         }
 
-           // JOptionPane.showMessageDialog(null, "Empate: " + n);
+        // JOptionPane.showMessageDialog(null, "Empate: " + n);
         return 0;
     }
 

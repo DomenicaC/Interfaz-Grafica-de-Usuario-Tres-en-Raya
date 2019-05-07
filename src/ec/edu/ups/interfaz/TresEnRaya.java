@@ -6,7 +6,6 @@
 package ec.edu.ups.interfaz;
 
 import java.awt.Color;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -382,6 +381,7 @@ public class TresEnRaya extends javax.swing.JFrame {
 
     private void btn00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn00ActionPerformed
         opcion();
+
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 0, 0);
 
@@ -392,24 +392,28 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbver1, 4, 0, 0);
 
         if (cont.jugar(btn00, 0, 0, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn00ActionPerformed
 
     private void btn01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 1);
         //vertical
         cont.rayar(matriz, jlbver2, 5, 0, 1);
 
         if (cont.jugar(btn01, 0, 1, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn01ActionPerformed
 
     private void btn02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 2);
         //vertical
@@ -418,24 +422,28 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbdia2, 8, 0, 2);
 
         if (cont.jugar(btn02, 0, 2, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn02ActionPerformed
 
     private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor2, 2, 1, 0);
         //vertical
         cont.rayar(matriz, jlbver1, 4, 1, 0);
 
         if (cont.jugar(btn10, 1, 0, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn10ActionPerformed
 
     private void btn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11ActionPerformed
         opcion();
+
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 1, 1);
         cont.rayar(matriz, jlbdia2, 8, 1, 1);
@@ -445,24 +453,28 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbver2, 5, 1, 1);
 
         if (cont.jugar(btn11, 1, 1, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn11ActionPerformed
 
     private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor2, 2, 1, 2);
         //vertical
         cont.rayar(matriz, jlbver3, 6, 1, 2);
 
         if (cont.jugar(btn12, 1, 02, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn12ActionPerformed
 
     private void btn20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn20ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor3, 3, 2, 0);
         //vertical
@@ -471,24 +483,28 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbdia2, 8, 2, 0);
 
         if (cont.jugar(btn20, 2, 0, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn20ActionPerformed
 
     private void btn21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn21ActionPerformed
         opcion();
+
         //horizontal
         cont.rayar(matriz, jlbhor3, 3, 2, 1);
         //vertical
         cont.rayar(matriz, jlbver2, 5, 2, 1);
 
         if (cont.jugar(btn21, 2, 1, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn21ActionPerformed
 
     private void btn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn22ActionPerformed
         opcion();
+
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 2, 2);
         //horizontal
@@ -497,8 +513,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbver3, 6, 2, 2);
 
         if (cont.jugar(btn22, 2, 2, matriz, jlbX1, jlbO1) == 1) {
-
+            resp = true;
         }
+        compu();
     }//GEN-LAST:event_btn22ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -516,21 +533,7 @@ public class TresEnRaya extends javax.swing.JFrame {
         }
     }
 
-    Contenido cont = new Contenido(0, 0, 0, 0);
-
-    /*public void empate() {
-        int movimientos = 0;
-        int matriz[][] = new int[3][3];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                if () {
-                    if (movimientos == 9) {
-                        JOptionPane.showMessageDialog(null, "Empate: ");
-                    }
-                }
-            }
-        }
-    }*/
+    Contenido cont = new Contenido(0, 0, 0);
 
     public void opcion() {
 
@@ -547,6 +550,7 @@ public class TresEnRaya extends javax.swing.JFrame {
     }
 
     public void nuevo() {
+        resp = false;
         ingresar();
         btn00.setText("");
         btn00.setEnabled(true);
@@ -624,96 +628,106 @@ public class TresEnRaya extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private boolean resp = false;
-    public void compu (){
-        if(resp == false){
-            
-            int random = (int) Math.random()*9+1;
-            
-            if(random == 1){
-                if(btn00.getText().equals("")){
-                    btn00.setText("X");
+
+    public void compu() {
+        if (resp == false) {
+
+            int random = (int) Math.random() * 9 + 1;
+
+            if (random == 1) {
+                if (btn00.getText().equals("")) {
+                    btn00.setText("O");
                     btn00.setForeground(Color.red);
-                }else {
+                    btn00.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 2){
-                if(btn01.getText().equals("")){
-                    btn01.setText("X");
+
+            if (random == 2) {
+                if (btn01.getText().equals("")) {
+                    btn01.setText("O");
                     btn01.setForeground(Color.red);
-                }else {
+                    btn01.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 3){
-                if(btn02.getText().equals("")){
-                    btn02.setText("X");
+
+            if (random == 3) {
+                if (btn02.getText().equals("")) {
+                    btn02.setText("O");
                     btn02.setForeground(Color.red);
-                }else {
+                    btn02.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 4){
-                if(btn10.getText().equals("")){
-                    btn10.setText("X");
+
+            if (random == 4) {
+                if (btn10.getText().equals("")) {
+                    btn10.setText("O");
                     btn10.setForeground(Color.red);
-                }else {
+                    btn10.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 5){
-                if(btn11.getText().equals("")){
-                    btn11.setText("X");
+
+            if (random == 5) {
+                if (btn11.getText().equals("")) {
+                    btn11.setText("O");
                     btn11.setForeground(Color.red);
-                }else {
+                    btn11.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 6){
-                if(btn12.getText().equals("")){
-                    btn12.setText("X");
+
+            if (random == 6) {
+                if (btn12.getText().equals("")) {
+                    btn12.setText("O");
                     btn12.setForeground(Color.red);
-                }else {
+                    btn12.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 7){
-                if(btn20.getText().equals("")){
-                    btn20.setText("X");
+
+            if (random == 7) {
+                if (btn20.getText().equals("")) {
+                    btn20.setText("O");
                     btn20.setForeground(Color.red);
-                }else {
+                    btn20.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 8){
-                if(btn21.getText().equals("")){
-                    btn21.setText("X");
+
+            if (random == 8) {
+                if (btn21.getText().equals("")) {
+                    btn21.setText("O");
                     btn21.setForeground(Color.red);
-                }else {
+                    btn21.setEnabled(false);
+                } else {
                     random++;
                 }
             }
-            
-            if(random == 9){
-                if(btn22.getText().equals("")){
-                    btn22.setText("X");
+
+            if (random == 9) {
+                if (btn22.getText().equals("")) {
+                    btn22.setText("O");
                     btn22.setForeground(Color.red);
-                }else {
+                    btn22.setEnabled(false);
+                } else {
                     random++;
                 }
             }
         }
     }
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn00;
