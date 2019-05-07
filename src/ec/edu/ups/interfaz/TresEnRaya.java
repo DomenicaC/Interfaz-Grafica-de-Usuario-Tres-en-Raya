@@ -624,6 +624,96 @@ public class TresEnRaya extends javax.swing.JFrame {
             }
         });
     }
+    
+    private boolean resp = false;
+    public void compu (){
+        if(resp == false){
+            
+            int random = (int) Math.random()*9+1;
+            
+            if(random == 1){
+                if(btn00.getText().equals("")){
+                    btn00.setText("X");
+                    btn00.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 2){
+                if(btn01.getText().equals("")){
+                    btn01.setText("X");
+                    btn01.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 3){
+                if(btn02.getText().equals("")){
+                    btn02.setText("X");
+                    btn02.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 4){
+                if(btn10.getText().equals("")){
+                    btn10.setText("X");
+                    btn10.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 5){
+                if(btn11.getText().equals("")){
+                    btn11.setText("X");
+                    btn11.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 6){
+                if(btn12.getText().equals("")){
+                    btn12.setText("X");
+                    btn12.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 7){
+                if(btn20.getText().equals("")){
+                    btn20.setText("X");
+                    btn20.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 8){
+                if(btn21.getText().equals("")){
+                    btn21.setText("X");
+                    btn21.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+            
+            if(random == 9){
+                if(btn22.getText().equals("")){
+                    btn22.setText("X");
+                    btn22.setForeground(Color.red);
+                }else {
+                    random++;
+                }
+            }
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn00;

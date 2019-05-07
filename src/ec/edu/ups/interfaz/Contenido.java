@@ -67,14 +67,10 @@ public class Contenido {
     }
 
     public void intercambiar() {
-        numRam = (int) Math.floor(Math.random() * (9 - 1 + 1) + 1);
+        //numRam = (int) Math.floor(Math.random() * (9 - 1 + 1) + 1);
 
         if (getTurno() == 0) {
             setTurno(1);
-            
-            
-            
-            //setTurno(1);
         } else {
             setTurno(0);
         }
