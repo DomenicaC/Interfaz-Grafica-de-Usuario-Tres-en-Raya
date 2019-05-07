@@ -6,12 +6,13 @@
 package ec.edu.ups.interfaz;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Domenica Cañizares
  * @since 03-Mayo-2019
- * @version IDE 8.0.2 
+ * @version IDE 8.0.2
  */
 public class TresEnRaya extends javax.swing.JFrame {
 
@@ -20,9 +21,9 @@ public class TresEnRaya extends javax.swing.JFrame {
      */
     public TresEnRaya() {
         initComponents();
-        
+
         ingresar();
-        
+
         pnlO.setBackground(Color.green);
         pnlX.setBackground(Color.yellow);
 
@@ -39,7 +40,7 @@ public class TresEnRaya extends javax.swing.JFrame {
         //lineas diagonales
         jlbdia1.setVisible(false);
         jlbdia2.setVisible(false);
-        
+
         this.setLocationRelativeTo(null);
     }
 
@@ -201,11 +202,13 @@ public class TresEnRaya extends javax.swing.JFrame {
         jlbver3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/ver.png"))); // NOI18N
         jPanel5.add(jlbver3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, -1));
 
+        jlbdia1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/raya 1.png"))); // NOI18N
         jlbdia1.setText("jLabel4");
-        jPanel5.add(jlbdia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel5.add(jlbdia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 10, 450, 250));
 
+        jlbdia2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ec/edu/ups/imagenes/raya 2.png"))); // NOI18N
         jlbdia2.setText("jLabel6");
-        jPanel5.add(jlbdia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+        jPanel5.add(jlbdia2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -240, -1, -1));
 
         btn00.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btn00.addActionListener(new java.awt.event.ActionListener() {
@@ -350,15 +353,14 @@ public class TresEnRaya extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(54, 54, 54)
+                                .addGap(44, 44, 44)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -367,15 +369,12 @@ public class TresEnRaya extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(20, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58))))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -385,15 +384,15 @@ public class TresEnRaya extends javax.swing.JFrame {
         opcion();
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 0, 0);
-        
+
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 0);
-        
+
         //vertical
         cont.rayar(matriz, jlbver1, 4, 0, 0);
-        
-        if(cont.jugar(btn00, 0, 0, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn00, 0, 0, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn00ActionPerformed
 
@@ -403,9 +402,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor1, 1, 0, 1);
         //vertical
         cont.rayar(matriz, jlbver2, 5, 0, 1);
-        
-        if(cont.jugar(btn01, 0, 1, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn01, 0, 1, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn01ActionPerformed
 
@@ -417,9 +416,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbver3, 6, 0, 2);
         //diagonal
         cont.rayar(matriz, jlbdia2, 8, 0, 2);
-        
-        if(cont.jugar(btn02, 0, 2, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn02, 0, 2, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn02ActionPerformed
 
@@ -429,9 +428,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor2, 2, 1, 0);
         //vertical
         cont.rayar(matriz, jlbver1, 4, 1, 0);
-        
-        if(cont.jugar(btn10, 1, 0, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn10, 1, 0, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn10ActionPerformed
 
@@ -444,9 +443,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor2, 2, 1, 1);
         //vertical
         cont.rayar(matriz, jlbver2, 5, 1, 1);
-        
-        if(cont.jugar(btn11, 1, 1, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn11, 1, 1, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn11ActionPerformed
 
@@ -456,9 +455,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor2, 2, 1, 2);
         //vertical
         cont.rayar(matriz, jlbver3, 6, 1, 2);
-        
-        if(cont.jugar(btn12, 1, 02, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn12, 1, 02, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn12ActionPerformed
 
@@ -470,9 +469,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbver1, 4, 2, 0);
         //diagonal
         cont.rayar(matriz, jlbdia2, 8, 2, 0);
-        
-        if(cont.jugar(btn20, 2, 0, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn20, 2, 0, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn20ActionPerformed
 
@@ -482,9 +481,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor3, 3, 2, 1);
         //vertical
         cont.rayar(matriz, jlbver2, 5, 2, 1);
-        
-        if(cont.jugar(btn21, 2, 1, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn21, 2, 1, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn21ActionPerformed
 
@@ -496,9 +495,9 @@ public class TresEnRaya extends javax.swing.JFrame {
         cont.rayar(matriz, jlbhor3, 3, 2, 2);
         //vertical
         cont.rayar(matriz, jlbver3, 6, 2, 2);
-        
-        if(cont.jugar(btn22, 2, 2, matriz, jlbX1, jlbO1)==1){
-             
+
+        if (cont.jugar(btn22, 2, 2, matriz, jlbX1, jlbO1) == 1) {
+
         }
     }//GEN-LAST:event_btn22ActionPerformed
 
@@ -506,60 +505,76 @@ public class TresEnRaya extends javax.swing.JFrame {
         nuevo();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
     //iniciar palabras
     private int matriz[][] = new int[3][3];
-    
-    public void ingresar(){
+
+    public void ingresar() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                matriz[i][j]=(j+10)*(i+10);
+                matriz[i][j] = (j + 10) * (i + 10);
             }
         }
     }
-    
-    Contenido cont = new Contenido(0, 0, 0);
-    
-    public void opcion(){
-        if(cont.getTurno()==1){
+
+    Contenido cont = new Contenido(0, 0, 0, 0);
+
+    /*public void empate() {
+        int movimientos = 0;
+        int matriz[][] = new int[3][3];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                if () {
+                    if (movimientos == 9) {
+                        JOptionPane.showMessageDialog(null, "Empate: ");
+                    }
+                }
+            }
+        }
+    }*/
+
+    public void opcion() {
+
+        if (cont.getTurno() == 1) {
             pnlX.setBackground(Color.yellow);
             pnlO.setBackground(Color.green);
+
         }
-        if(cont.getTurno()==0){
+        if (cont.getTurno() == 0) {
             pnlX.setBackground(Color.green);
             pnlO.setBackground(Color.yellow);
         }
+
     }
-    
-    public void nuevo(){
+
+    public void nuevo() {
         ingresar();
         btn00.setText("");
         btn00.setEnabled(true);
-        
+
         btn01.setText("");
         btn01.setEnabled(true);
-        
+
         btn02.setText("");
         btn02.setEnabled(true);
-        
+
         btn10.setText("");
         btn10.setEnabled(true);
-        
+
         btn11.setText("");
         btn11.setEnabled(true);
-        
+
         btn12.setText("");
         btn12.setEnabled(true);
-        
+
         btn20.setText("");
         btn20.setEnabled(true);
-        
+
         btn21.setText("");
         btn21.setEnabled(true);
-        
+
         btn22.setText("");
         btn22.setEnabled(true);
-        
+
         //lineas horizontales
         jlbhor1.setVisible(false);
         jlbhor2.setVisible(false);
@@ -574,9 +589,7 @@ public class TresEnRaya extends javax.swing.JFrame {
         jlbdia1.setVisible(false);
         jlbdia2.setVisible(false);
     }
-    
-   
-    
+
     /**
      * @param args the command line arguments
      */

@@ -12,21 +12,24 @@ import javax.swing.JOptionPane;
  *
  * @author Domenica Cañizares
  * @since 03-Mayo-2019
- * @version IDE 8.0.2 
+ * @version IDE 8.0.2
  */
 public class Contenido {
+
     private int turno;
     private int pX;
     private int pO;
+    private int numRam;
 
     public Contenido() {
     }
 
     //contructor
-    public Contenido(int turno, int pX, int pO) {
+    public Contenido(int turno, int pX, int pO, int numRam) {
         this.turno = turno;
         this.pX = pX;
         this.pO = pO;
+        this.numRam = numRam;
     }
 
     //set
@@ -42,6 +45,10 @@ public class Contenido {
         this.pO = pO;
     }
 
+    public void setNumRam(int numRam) {
+        this.numRam = numRam;
+    }
+
     //get
     public int getTurno() {
         return turno;
@@ -55,12 +62,23 @@ public class Contenido {
         return pO;
     }
 
+    public int getNumRam() {
+        return numRam;
+    }
+
     public void intercambiar() {
+        numRam = (int) Math.floor(Math.random() * (9 - 1 + 1) + 1);
+
         if (getTurno() == 0) {
             setTurno(1);
+            
+            
+            
+            //setTurno(1);
         } else {
             setTurno(0);
         }
+        
     }
 
     public int posibilidad(int matriz[][]) {
@@ -111,6 +129,7 @@ public class Contenido {
         if (getTurno() == 0) {
             n = "X";
             btt.setForeground(Color.red);
+            
         } else {
             n = "O";
             btt.setForeground(Color.blue);
@@ -131,12 +150,10 @@ public class Contenido {
                 setpO(getpO() + 1);
                 jO.setText(String.valueOf(getpO()));
             }
-            return 1; 
+            return 1;
         }
-        
+
            // JOptionPane.showMessageDialog(null, "Empate: " + n);
-          
-        
         return 0;
     }
 
@@ -145,6 +162,6 @@ public class Contenido {
         if (posibilidad(matriz) == n) {
             p.setVisible(true);
         }
-        
-    }        
+
+    }
 }
