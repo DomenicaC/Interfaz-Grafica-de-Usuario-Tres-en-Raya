@@ -6,6 +6,7 @@
 package ec.edu.ups.interfaz;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -385,16 +386,23 @@ public class TresEnRaya extends javax.swing.JFrame {
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 0, 0);
 
+        cont.rayar1(matriz, jlbdia1, 15, 0, 0);
+
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 0);
+
+        cont.rayar1(matriz, jlbhor1, 9, 0, 0);
 
         //vertical
         cont.rayar(matriz, jlbver1, 4, 0, 0);
 
+        cont.rayar1(matriz, jlbver1, 12, 0, 0);
+
         if (cont.jugar(btn00, 0, 0, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn00ActionPerformed
 
     private void btn01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn01ActionPerformed
@@ -402,13 +410,20 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 1);
+
+        cont.rayar1(matriz, jlbhor1, 9, 0, 1);
+
         //vertical
         cont.rayar(matriz, jlbver2, 5, 0, 1);
+
+        cont.rayar(matriz, jlbver2, 12, 0, 1);
 
         if (cont.jugar(btn01, 0, 1, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
         }
-        compu();
+        else {
+            compu();
+        }
     }//GEN-LAST:event_btn01ActionPerformed
 
     private void btn02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn02ActionPerformed
@@ -416,15 +431,24 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor1, 1, 0, 2);
+
+        cont.rayar1(matriz, jlbhor1, 9, 0, 2);
+
         //vertical
         cont.rayar(matriz, jlbver3, 6, 0, 2);
+
+        cont.rayar1(matriz, jlbver3, 14, 0, 2);
+
         //diagonal
         cont.rayar(matriz, jlbdia2, 8, 0, 2);
 
+        cont.rayar1(matriz, jlbdia2, 16, 0, 2);
+
         if (cont.jugar(btn02, 0, 2, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else{
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn02ActionPerformed
 
     private void btn10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn10ActionPerformed
@@ -432,13 +456,19 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor2, 2, 1, 0);
+
+        cont.rayar1(matriz, jlbhor2, 10, 1, 0);
+        
         //vertical
         cont.rayar(matriz, jlbver1, 4, 1, 0);
 
+        cont.rayar1(matriz, jlbver1, 12, 1, 0);
+
         if (cont.jugar(btn10, 1, 0, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn10ActionPerformed
 
     private void btn11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn11ActionPerformed
@@ -447,15 +477,25 @@ public class TresEnRaya extends javax.swing.JFrame {
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 1, 1);
         cont.rayar(matriz, jlbdia2, 8, 1, 1);
+
+        cont.rayar1(matriz, jlbdia1, 15, 1, 1);
+        cont.rayar1(matriz, jlbdia2, 16, 1, 1);
+
         //horizontal
         cont.rayar(matriz, jlbhor2, 2, 1, 1);
+
+        cont.rayar1(matriz, jlbhor2, 10, 1, 1);
+
         //vertical
         cont.rayar(matriz, jlbver2, 5, 1, 1);
 
+        cont.rayar1(matriz, jlbver2, 13, 1, 1);
+
         if (cont.jugar(btn11, 1, 1, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+           compu();
         }
-        compu();
     }//GEN-LAST:event_btn11ActionPerformed
 
     private void btn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn12ActionPerformed
@@ -463,13 +503,19 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor2, 2, 1, 2);
+
+        cont.rayar1(matriz, jlbhor2, 10, 1, 2);
+
         //vertical
         cont.rayar(matriz, jlbver3, 6, 1, 2);
 
+        cont.rayar1(matriz, jlbver3, 14, 1, 2);
+
         if (cont.jugar(btn12, 1, 02, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn12ActionPerformed
 
     private void btn20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn20ActionPerformed
@@ -477,15 +523,24 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor3, 3, 2, 0);
+
+        cont.rayar1(matriz, jlbhor3, 11, 2, 0);
+
         //vertical
         cont.rayar(matriz, jlbver1, 4, 2, 0);
+
+        cont.rayar1(matriz, jlbver1, 12, 2, 0);
+
         //diagonal
         cont.rayar(matriz, jlbdia2, 8, 2, 0);
 
+        cont.rayar1(matriz, jlbdia2, 16, 2, 0);
+
         if (cont.jugar(btn20, 2, 0, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn20ActionPerformed
 
     private void btn21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn21ActionPerformed
@@ -493,13 +548,19 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //horizontal
         cont.rayar(matriz, jlbhor3, 3, 2, 1);
+
+        cont.rayar1(matriz, jlbhor3, 11, 2, 1);
+
         //vertical
         cont.rayar(matriz, jlbver2, 5, 2, 1);
 
+        cont.rayar1(matriz, jlbver2, 13, 2, 1);
+
         if (cont.jugar(btn21, 2, 1, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else{
+            compu();
         }
-        compu();
     }//GEN-LAST:event_btn21ActionPerformed
 
     private void btn22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn22ActionPerformed
@@ -507,15 +568,24 @@ public class TresEnRaya extends javax.swing.JFrame {
 
         //diagonal
         cont.rayar(matriz, jlbdia1, 7, 2, 2);
+
+        cont.rayar1(matriz, jlbdia1, 15, 2, 2);
+
         //horizontal
         cont.rayar(matriz, jlbhor3, 3, 2, 2);
+
+        cont.rayar1(matriz, jlbhor3, 11, 2, 2);
+
         //vertical
         cont.rayar(matriz, jlbver3, 6, 2, 2);
 
+        cont.rayar1(matriz, jlbver3, 14, 2, 2);
+
         if (cont.jugar(btn22, 2, 2, matriz, jlbX1, jlbO1) == 1) {
             resp = true;
+        } else {
+           compu();
         }
-        compu();
     }//GEN-LAST:event_btn22ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -725,7 +795,10 @@ public class TresEnRaya extends javax.swing.JFrame {
                     random++;
                 }
             }
+            
         }
+        
+        
     }
 
 

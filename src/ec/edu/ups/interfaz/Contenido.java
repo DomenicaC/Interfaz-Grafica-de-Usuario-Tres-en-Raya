@@ -107,6 +107,50 @@ public class Contenido {
 
         return 0;
     }
+    
+    ////////////////////////////////////////////////////////////////////////////
+    public int posibilidadCompu(int matriz[][]) {
+        //maneras de ganar horizontal
+        //ho11
+        if (matriz[0][0] == matriz[0][1] & matriz[0][0] == matriz[0][2]) {
+            return 9;
+        }
+        //hor2
+        if (matriz[1][0] == matriz[1][1] & matriz[1][0] == matriz[1][2]) {
+            return 10;
+        }
+        //hor3
+        if (matriz[2][0] == matriz[2][1] & matriz[2][0] == matriz[2][2]) {
+            return 11;
+        }
+
+        //maneras de ganar vertical
+        //ver1
+        if (matriz[0][0] == matriz[1][0] & matriz[0][0] == matriz[2][0]) {
+            return 12;
+        }
+        //ver2
+        if (matriz[0][1] == matriz[1][1] & matriz[0][1] == matriz[2][1]) {
+            return 13;
+        }
+        //ver3
+        if (matriz[0][2] == matriz[1][2] & matriz[0][2] == matriz[2][2]) {
+            return 14;
+        }
+
+        //maneras de ganar diagonal
+        //diagonal 1
+        if (matriz[0][0] == matriz[1][1] & matriz[0][0] == matriz[2][2]) {
+            return 15;
+        }
+        //diagonal 2
+        if (matriz[0][2] == matriz[1][1] & matriz[0][2] == matriz[2][0]) {
+            return 16;
+        }
+
+        return 0;
+    }
+    //////////////////////////////////////////////////////////////////////////////////
 
     public int jugar(javax.swing.JButton btt, int i, int j, int matriz[][], javax.swing.JLabel jX, javax.swing.JLabel jO) {
         matriz[i][j] = getTurno();
@@ -114,10 +158,10 @@ public class Contenido {
         
 
         if (getTurno() ==0) {
-            n = "x";
+            n = "X";
             btt.setForeground(Color.blue);
         }
-        //intercambiar();
+        
         btt.setText(n);
         btt.setEnabled(false);
 
@@ -129,21 +173,23 @@ public class Contenido {
                 setpX(getpX() + 1);
                 jX.setText(String.valueOf(getpX()));
             }
-
-            if (getTurno() ==1) {
-                setpO(getpO() + 1);
-                jO.setText(String.valueOf(getpO()));
-            }
             return 1;
         }
-
-        // JOptionPane.showMessageDialog(null, "Empate: " + n);
+        
         return 0;
     }
+ 
 
     public void rayar(int matriz[][], javax.swing.JLabel p, int n, int i, int j) {
         matriz[i][j] = getTurno();
         if (posibilidad(matriz) == n) {
+            p.setVisible(true);
+        }
+
+    }
+    public void rayar1(int matriz[][], javax.swing.JLabel p, int n, int i, int j) {
+        matriz[i][j] = getTurno();
+        if (posibilidadCompu(matriz) == n) {
             p.setVisible(true);
         }
 
